@@ -1,8 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
-import DirectionCard from "../card/DirectionCard";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import AddAddressModal from "../modal/AddAddressModal";
 import { FaPlus } from "react-icons/fa";
+import DCard from "../Card/DCard";
 
 export default function UserAddress() {
   const { user, updateAddresses, updateUser } = useContext(AuthContext);

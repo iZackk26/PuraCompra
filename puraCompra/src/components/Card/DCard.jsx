@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { Modal, Button, Toast } from 'flowbite-react';
 import axios from 'axios';
 import { HiCheck } from 'react-icons/hi';
 import photo from '../../assets/address/addressBackground.png';
 import { AuthContext } from '../../context/AuthContext';
 
-export default function DirectionCard({ directionNumber, direction, addressID, onUpdate, onDelete }) {
+export default function DCard({ directionNumber, direction, addressID, onUpdate, onDelete }) {
     const { user } = useContext(AuthContext);
     const [newAddress, setNewAddress] = useState(direction);
     const [isModalOpen, setIsModalOpen] = useState(false);
