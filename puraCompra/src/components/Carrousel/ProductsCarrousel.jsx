@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ProductsCarrousel = ({ products, carrouselId }) => {
   const navigate = useNavigate();
@@ -27,9 +28,7 @@ const ProductsCarrousel = ({ products, carrouselId }) => {
       swiperInstance.on('slideChange', updateNavigation);
       swiperInstance.on('reachEnd', updateNavigation);
       swiperInstance.on('reachBeginning', updateNavigation);
-
-      // Initial update
-      updateNavigation();
+      updateNavigation(); // Initial update
     }
 
     return () => {
@@ -77,7 +76,7 @@ const ProductsCarrousel = ({ products, carrouselId }) => {
             >
               <div className="w-full h-48 mb-4 overflow-hidden flex justify-center items-center">
                 <img 
-                  src={`http://localhost:3000${product.imageUrl}`}
+                  src={product.imageUrl}
                   alt={product.name} 
                   className="object-contain max-h-full"
                 />
@@ -99,5 +98,10 @@ const ProductsCarrousel = ({ products, carrouselId }) => {
     </div>
   );
 };
+ProductsCarrousel.propTypes = {
+  products: PropTypes.array.isRequired,
+  carrouselId: PropTypes.string.isRequired,
+};
+
 
 export default ProductsCarrousel;

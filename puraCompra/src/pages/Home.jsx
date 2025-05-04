@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from '../assets/JieShopLogoWhite.png';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
@@ -18,6 +17,21 @@ export default function Home() {
           <div className="w-full md:w-1/2 flex justify-center items-center">
             <img src={Logo} alt="Imagen decorativa" className="w-full max-w-full h-auto object-contain md:object-cover" />
           </div>
+        </div>
+
+        <div className="text-white text-center font-bold py-4 px-6">
+          <p className="text-sm md:text-base">
+            <strong>This is a non-functional prototype</strong> and requires hosting resources and associated costs. To fully try it out,
+            please clone the repository and deploy both backend and frontend yourself:&nbsp;
+            <a
+              href="https://github.com/iZackk26/PuraCompra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 underline"
+            >
+              https://github.com/iZackk26/PuraCompra
+            </a>
+          </p>
         </div>
       </div>
       <Footer />

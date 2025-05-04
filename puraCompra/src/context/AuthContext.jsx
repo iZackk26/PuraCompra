@@ -4,6 +4,13 @@ import sessionstorage from 'sessionstorage';
 // Crea el contexto
 const AuthContext = createContext();
 
+const DEMO_USER = {
+  id: 1,
+  name: "Demo User",
+  email: "demo@example.com",
+  role: "user"
+};
+
 // Crea el proveedor del contexto
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -94,11 +101,17 @@ const AuthProvider = ({ children }) => {
 
   // Comprueba el token almacenado cuando la app se carga
   useEffect(() => {
-    const storedUser = sessionstorage.getItem('user');
+    const storedUser = localStorage.getItem("user");
+  
     if (storedUser) {
       setUser(JSON.parse(storedUser));
+    } else {
+      // Auto-login con el usuario quemado
+      localStorage.setItem("user", JSON.stringify(DEMO_USER));
+      setUser(DEMO_USER);
     }
   }, []);
+  
 
   return (
     <AuthContext.Provider value={{ user, login, register, logout, updateAddresses, getUserDetails, updateUser }}>

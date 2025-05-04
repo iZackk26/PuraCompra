@@ -22,8 +22,8 @@ const Footer = () => {
                         <div className="bottom-label">
                             <div className="label font-bold mb-2">Social</div>
                         </div>
-                        <a href="https://twitter.com/Hasbulla_NFT" target="_blank" className="footer-link block mb-1">X/Twitter</a>
-                        <a href="https://discord.com/invite/hasbullanft" target="_blank" className="footer-link block">Discord</a>
+                        <a href="https://www.linkedin.com/in/izack" target="_blank" rel="noopener noreferrer" className="footer-link block mb-1">LinkedIn</a>
+                        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="footer-link block">Discord</a>
                     </div>
                 </div>
             </footer>
