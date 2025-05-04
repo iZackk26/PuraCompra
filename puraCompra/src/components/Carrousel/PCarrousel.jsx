@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ProductsCarrousel = ({ products, carrouselId }) => {
+const PCarrousel = ({ products, carrouselId }) => {
   const navigate = useNavigate();
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -98,10 +98,10 @@ const ProductsCarrousel = ({ products, carrouselId }) => {
     </div>
   );
 };
-ProductsCarrousel.propTypes = {
+PCarrousel.propTypes = {
   products: PropTypes.array.isRequired,
   carrouselId: PropTypes.string.isRequired,
 };
 
 
-export default ProductsCarrousel;
+export default PCarrousel;

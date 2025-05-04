@@ -1,7 +1,6 @@
-import ProductsCarrousel from '../components/carrousel/ProductsCarrousel';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
-
+import PCarrousel from '../components/Carrousel/PCarrousel';
 const Products = () => {
   const products = [
     // 🍎 Apple
@@ -196,7 +195,7 @@ const Products = () => {
         {Object.entries(groupedProducts).map(([sellerName, sellerProducts], index) => (
           <section key={sellerName} className="mb-12">
             <h2 className="text-2xl font-bold mb-4">{sellerName}</h2>
-            <ProductsCarrousel
+            <PCarrousel
               products={sellerProducts}
               carrouselId={`crousel-${index}`}
             />
